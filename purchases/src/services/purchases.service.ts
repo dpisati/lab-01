@@ -7,11 +7,22 @@ interface CreatePurchaseParams {
 }
 
 @Injectable()
-export class PurchaseService {
+export class PurchasesService {
   constructor(private prisma: PrismaService) {}
 
   async listAllPurchases() {
     return await this.prisma.purchase.findMany({
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+  }
+
+  async listAllFromCustomer(customerId: string) {
+    return await this.prisma.purchase.findMany({
+      where: {
+        customerId,
+      },
       orderBy: {
         createdAt: 'desc',
       },

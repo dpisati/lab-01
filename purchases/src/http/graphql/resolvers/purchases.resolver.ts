@@ -10,7 +10,7 @@ import {
 import { AuthUser, CurrentUser } from '../../../http/auth/current-user';
 import { CustomersService } from '../../../services/customers.service';
 import { ProductsService } from '../../../services/products.service';
-import { PurchaseService } from '../../../services/purchases.service';
+import { PurchasesService } from '../../../services/purchases.service';
 import { AuthorizationGuard } from '../../auth/authorization.guard';
 import { CreatePurchaseInput } from '../inputs/create-purchase-input';
 import { Product } from '../models/product';
@@ -19,7 +19,7 @@ import { Purchase } from '../models/purchase';
 @Resolver(() => Purchase)
 export class PurchasesResolver {
   constructor(
-    private purchasesService: PurchaseService,
+    private purchasesService: PurchasesService,
     private productsService: ProductsService,
     private customersService: CustomersService,
   ) {}
