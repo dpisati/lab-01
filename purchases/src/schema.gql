@@ -2,6 +2,40 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Product {
+  id: ID!
+  title: String!
+  slug: String!
+}
+
+type Purchase {
+  id: ID!
+  status: PurchaseStatus!
+  createdAt: DateTime!
+  product: Product!
+}
+
+"""Available purchase statuses"""
+enum PurchaseStatus {
+  PENDING
+  APPROVED
+  FAILED
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
 type Query {
-  hello: String!
+  products: [Product!]!
+  purchases: [Purchase!]!
+}
+
+type Mutation {
+  createProduct(data: CreateProductInput!): Product!
+}
+
+input CreateProductInput {
+  title: String!
 }

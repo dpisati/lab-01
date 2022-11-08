@@ -14,7 +14,7 @@ export class TestResolver {
   @Query(() => String)
   @UseGuards(AuthorizationGuard)
   async hello() {
-    // const customers = this.prisma.custumer.findMany();
+    // const customers = this.prisma.customer.findMany();
     // return customers;
     return 'ok classroom';
   }
