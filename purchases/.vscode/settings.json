@@ -1,0 +1,8 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#04300e",
+    "titleBar.activeBackground": "#05430f",
+    "titleBar.activeForeground": "#ddfce7"
+  },
+  "cSpell.words": ["jwks"]
+}
